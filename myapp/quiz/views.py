@@ -15,9 +15,6 @@ def question(request):
     if request.method == "POST":
         # Retrieve the selected option
         selected_option = request.POST.get('selected_option')
-        print(f"Debug - Selected Option: {selected_option}")
-        print(f"Debug - Correct Answer: {question.OptionAns}")
-
         # Check if the selected option matches the correct answer
         if int(selected_option) == question.OptionAns:
             request.session['score'] += 1
